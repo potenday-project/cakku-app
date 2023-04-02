@@ -38,8 +38,13 @@ jobs:
         with:
           name: web-release
 
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Deploy to AWS S3
+        uses: aws-actions/configure-aws-credentials@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_S3_REGION }}
+
+      - name: Upload to S3
+        run: |
+          aws s3 cp --region ${{ secrets.AWS_S3_REGION }} . s3://${{ secrets.AWS_S3_BUCKET_NAME }}/ --recursive
