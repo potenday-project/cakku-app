@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 
 import '../api/invitation_detail_type_response.dart';
 import '../cakku_colors.dart';
+import '../cakku_floating_action_button.dart';
 
 /// 03. 초대 분위기/컨셉
 class QuestionConceptPage extends StatefulWidget {
@@ -66,14 +67,14 @@ class _QuestionConceptPageState extends State<QuestionConceptPage> {
             ),
           ],
         ),
-        floatingActionButton: FloatingActionButton(
+        floatingActionButton: CakkuFloatingActionButton(
           onPressed: () {
             builder.data.invitationDetailTypeId = invitationDetailTypeResponses[selectedIndex].invitationDetailTypeId;
             builder.invitationDetailTypeName = invitationDetailTypeResponses[selectedIndex].name;
             Navigator.pushNamed(context, '/question/${widget.questionPageNumber + 1}');
           },
-          child: const Icon(Icons.arrow_forward),
         ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       ),
     );
   }

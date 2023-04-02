@@ -1,3 +1,4 @@
+import 'package:cakku_app/cakku_floating_action_button.dart';
 import 'package:cakku_app/domain/invitation_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -37,12 +38,12 @@ class QuestionSummaryPage extends StatelessWidget {
             ),
           ],
         ),
-        floatingActionButton: FloatingActionButton(
+        floatingActionButton: CakkuFloatingActionButton(
           onPressed: () {
             Navigator.pushNamed(context, '/question/${questionPageNumber + 1}');
           },
-          child: const Icon(Icons.arrow_forward),
         ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       ),
     );
   }

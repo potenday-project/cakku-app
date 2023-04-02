@@ -67,6 +67,7 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   assets:
+    - assets/icon_right.svg
     - assets/logo.svg
     - assets/start_image_01.svg
     - assets/start_image_02.svg

@@ -1,3 +1,4 @@
+import 'package:cakku_app/cakku_floating_action_button.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -33,20 +34,13 @@ class QuestionNamePage extends StatelessWidget {
           ),
         ],
       ),
-      floatingActionButton: Container(
-        width: MediaQuery.of(context).size.width - 40,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          color: Colors.white,
-        ),
-        child: FloatingActionButton.extended(
-          label: Text('다음'),
-          onPressed: () {
-            builder.updateUserName(_controller.value.text);
-            Navigator.pushNamed(context, '/question/${questionPageNumber + 1}');
-          },
-        ),
-      )
+      floatingActionButton: CakkuFloatingActionButton(
+        onPressed: () {
+          builder.data.userName = _controller.text;
+          Navigator.pushNamed(context, '/question/${questionPageNumber + 1}');
+        },
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 
