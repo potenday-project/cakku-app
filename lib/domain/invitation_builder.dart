@@ -54,6 +54,11 @@ class InvitationBuilder with ChangeNotifier {
     notifyListeners();
   }
 
+  void reset() {
+    _data.reset();
+    notifyListeners();
+  }
+
   @override
   String toString() {
     return 'InvitationBuilder{_data: $_data}';

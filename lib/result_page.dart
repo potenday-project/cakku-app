@@ -71,6 +71,7 @@ class ResultPage extends StatelessWidget {
             Center(
               child: ElevatedButton(
                 onPressed: () {
+                  invitationBuilder.reset();
                   Navigator.pushReplacementNamed(context, '/start');
                 },
                 child: const Text('새로운 초대장 만들기'),

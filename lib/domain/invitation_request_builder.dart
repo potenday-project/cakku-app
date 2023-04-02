@@ -36,6 +36,18 @@ class InvitationRequestBuilder {
     );
   }
 
+  reset() {
+    userName = null;
+    invitationTypeIndex = null;
+    invitationDetailTypeId = null;
+    summary = null;
+    description = null;
+    date = null;
+    time = null;
+    place = null;
+    cardTemplateItemIds = [];
+  }
+
   @override
   String toString() {
     return 'InvitationRequestBuilder{userName: $userName, invitationTypeIndex: $invitationTypeIndex, invitationDetailTypeId: $invitationDetailTypeId, summary: $summary, description: $description, date: $date, time: $time, place: $place, cardTemplateItemsIds: $cardTemplateItemIds}';
