@@ -1,8 +1,10 @@
 import 'package:cakku_app/domain/invitation_builder.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
 import '../cakku_colors.dart';
+import '../cakku_floating_action_button.dart';
 
 /// 02. 초대 목적
 class QuestionPurposePage extends StatefulWidget {
@@ -55,16 +57,17 @@ class QuestionPurposePageState extends State<QuestionPurposePage> {
             ),
           ],
         ),
-        floatingActionButton: FloatingActionButton(
+        floatingActionButton: CakkuFloatingActionButton(
           onPressed: () {
-            final invitationTypeState = invitationTypeStates.firstWhere((e) => e.isSelected);
+            final invitationTypeState =
+                invitationTypeStates.firstWhere((e) => e.isSelected);
             builder.updateInvitationTypeIndex(invitationTypeState.index);
             builder.invitationTypeName = invitationTypeState.label;
             Navigator.pushNamed(
                 context, '/question/${widget.questionPageNumber + 1}');
           },
-          child: Icon(Icons.arrow_back),
         ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       ),
     );
   }
