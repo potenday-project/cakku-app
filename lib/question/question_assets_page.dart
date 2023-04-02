@@ -103,7 +103,9 @@ class _QuestionAssetsPageState extends State<QuestionAssetsPage> {
           ),
           floatingActionButton: FloatingActionButton(
             onPressed: () {
-              Navigator.pushNamed(context, '/question/${widget.questionPageNumber + 1}');
+              Navigator.pushNamed(context, '/question/loading');
+              // FIXME: 날짜, 시간, 장소, 목적, 구현필요
+              // Navigator.pushNamed(context, '/question/${widget.questionPageNumber + 1}');
             },
             child: const Icon(Icons.arrow_forward),
           )
